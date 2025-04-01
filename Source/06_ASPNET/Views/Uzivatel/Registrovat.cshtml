@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Titulek"] = "Registrace";
+}
+
+<form action="/Uzivatel/Registrovat" method="post">
+    <input type="text" name="jmeno" placeholder="Jméno..." /><br />
+    <input type="password" name="heslo" placeholder="Heslo..." /><br />
+    <input type="password" name="heslo_kontrola" placeholder="Heslo pro kontrolu..." /><br />
+    <input type="submit" value="Registrovat" />
+    <p class="chyba">@ViewData["chyba"]</p>
+</form>
