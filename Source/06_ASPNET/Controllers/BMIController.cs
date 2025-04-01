@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata;
+using _06_ASPNET.Models;
 
-namespace VasNazevProjektu.Controllers
+namespace _06_ASPNET.Controllers
 {
     public class BmiController : Controller
     {
         [HttpGet]
         public IActionResult Index()
         {
-            return View(new BmiModel());
+            return View("~/Views/Bmi/Index.cshtml", new BmiModel());
         }
 
         [HttpPost]
@@ -18,7 +18,7 @@ namespace VasNazevProjektu.Controllers
             {
                 model.VypocitejBmi();
             }
-            return View(model);
+            return View("~/Views/Bmi/Index.cshtml", model);
         }
     }
 }
