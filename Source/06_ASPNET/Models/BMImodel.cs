@@ -1,11 +1,10 @@
-﻿
-// Model pro BMI výpočet
+﻿namespace _06_ASPNET.Models;
 using Microsoft.AspNetCore.Mvc;
 
 public class BmiModel
 {
-    public double Vyska { get; set; } // výška v metrech
-    public double Vaha { get; set; } // váha v kilogramech
+    public double Vyska { get; set; } 
+    public double Vaha { get; set; } 
     public double? BmiVysledek { get; set; }
     public string? BmiKategorie { get; set; }
 
