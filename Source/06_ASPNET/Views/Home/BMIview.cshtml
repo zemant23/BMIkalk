@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "BMI Kalkulačka";
+}
+
+<div class="container">
+    <h2 class="mt-4 mb-4">Kalkulačka BMI</h2>
+
+    <form asp-action="Index" method="post">
+        <div class="form-group mb-3">
+            <label  class="form-label">Výška (v metrech):</label>
+            <input  class="form-control" placeholder="Např.: 1.75" />
+            <span  class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label  class="form-label">Váha (v kilogramech):</label>
+            <input  class="form-control" placeholder="Např.: 70" />
+            <span  class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Vypočítat BMI</button>
+    </form>
+
+    @if (Model.BmiVysledek.HasValue)
+    {
+        <div class="mt-4">
+            <h3>Výsledek:</h3>
+            <div class="alert alert-info">
+                <p>Vaše BMI: <strong>@Model.BmiVysledek.Value.ToString("F2")</strong></p>
+                <p>Kategorie: <strong>@Model.BmiKategorie</strong></p>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
