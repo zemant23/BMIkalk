@@ -10,6 +10,6 @@ namespace _06_ASPNET.Data
         { }
 
         public DbSet<Uzivatel> Uzivatele { get; set; }
-        public DbSet<BmiModel> BmiModely { get; set; }
+        public DbSet<BMI> BmiModely { get; set; }
     }
 }

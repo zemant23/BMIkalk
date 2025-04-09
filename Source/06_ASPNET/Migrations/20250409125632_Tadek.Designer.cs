@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _06_ASPNET.Data;
 
@@ -10,9 +11,11 @@ using _06_ASPNET.Data;
 namespace _06_ASPNET.Migrations
 {
     [DbContext(typeof(MujContext))]
-    partial class MujContextModelSnapshot : ModelSnapshot
+    [Migration("20250409125632_Tadek")]
+    partial class Tadek
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

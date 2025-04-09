@@ -9,5 +9,7 @@ namespace _06_ASPNET.Models
         public string Jmeno { get; set; }
 
         public string Heslo { get; set; }
+
+        public BMI BMI { get; set; }
     }
 }

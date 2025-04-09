@@ -1,8 +1,9 @@
 ﻿namespace _06_ASPNET.Models;
 using Microsoft.AspNetCore.Mvc;
 
-public class BmiModel
+public class BMI
 {
+    public int Id { get; set; }
     public double Vyska { get; set; } 
     public double Vaha { get; set; } 
     public double? BmiVysledek { get; set; }
@@ -25,25 +26,5 @@ public class BmiModel
         if (bmi < 35) return "Obezita 1. stupně";
         if (bmi < 40) return "Obezita 2. stupně";
         return "Obezita 3. stupně";
-    }
-}
-
-// Controller
-public class BmiController : Controller
-{
-    [HttpGet]
-    public IActionResult Index()
-    {
-        return View(new BmiModel());
-    }
-
-    [HttpPost]
-    public IActionResult Index(BmiModel model)
-    {
-        if (ModelState.IsValid)
-        {
-            model.VypocitejBmi();
-        }
-        return View(model);
     }
 }
