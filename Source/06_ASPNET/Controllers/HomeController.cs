@@ -8,7 +8,9 @@ namespace _06_ASPNET.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            BmiModel novyModel = new BmiModel();
+
+            return View(novyModel);
         }
     }
 }
